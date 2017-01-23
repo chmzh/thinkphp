@@ -4,6 +4,7 @@ namespace app\index\controller;
 use think\Request;
 use \think\Db;
 use app\index\model\User;
+use think\cache\driver\Redis;
 class Index
 {
     
@@ -13,7 +14,13 @@ class Index
         //return view("index");
     }
     
-    
+    public function redis(){
+        $redis = new Redis();
+        $datas=['name'=>'chmzh'];
+        $redis->set('username',$datas);
+        
+        print_r($redis->get('username'));
+    }
     
     public function index()
     {
