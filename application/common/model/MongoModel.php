@@ -20,7 +20,11 @@ class MongoModel extends Model
     }
     
     public function loc(){
-        $arr = Db::name("location")->find("{'loc':'\{\$near\:[50,50]\}'}");
+        $query=[
+            'loc'=>'{$near:[50,50]}',
+            //'password'=>md5($password),
+        ];
+        $arr = Db::name("location")->find($query);
         print_r($arr);
     }
 } 
