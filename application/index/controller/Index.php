@@ -21,6 +21,15 @@ class Index
         //Admin::login("chmzh", "1");
         $model = new MongoModel;
         $model->find();
+        
+        
+        //$address = new Address;
+        //$address->find();
+    }
+    
+    public function loc(){
+        $model = new MongoModel;
+        $model->loc();
     }
     
     public function redis(){
