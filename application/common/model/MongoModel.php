@@ -15,7 +15,10 @@ class MongoModel extends Model
 //     ];
     
     public function find(){
-        $arr = Db::name("user")->find();
+        $query=[
+            'name'=>'chmzh',
+        ];
+        $arr = Db::name("user")->where($query)->find();
         print_r($arr);
     }
     
@@ -24,7 +27,7 @@ class MongoModel extends Model
             'loc'=>'{$near:[50,50]}',
             //'password'=>md5($password),
         ];
-        $arr = Db::name("location")->find($query);
+        $arr = Db::name("location")->where($query)->find();
         print_r($arr);
     }
 } 
