@@ -3,8 +3,11 @@ namespace app\index\controller;
 
 use think\Request;
 use \think\Db;
-use app\index\model\User;
+use app\common\model\User;
 use think\cache\driver\Redis;
+use app\common\model\Admin;
+use app\common\model\Address;
+use app\common\model\MongoModel;
 class Index
 {
     
@@ -14,8 +17,15 @@ class Index
         //return view("index");
     }
     
+    public function mongo(){
+        //Admin::login("chmzh", "1");
+        $model = new MongoModel;
+        $model->find();
+    }
+    
     public function redis(){
         $redis = new Redis();
+        
         $datas=['name'=>'chmzh'];
         $redis->set('username',$datas);
         
@@ -46,9 +56,9 @@ class Index
         
         //$user->event("after_insert", 'after_insert');
         
-        $user->uname='hello2';
+        $user->uname='hello3';
         try {
-            $user->save();
+            echo $user->save();
         } catch (\Exception $e) {
             //exception($e);
         }finally {
