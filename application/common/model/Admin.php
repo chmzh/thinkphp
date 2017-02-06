@@ -25,6 +25,7 @@ class Admin extends \think\Model
         ];
         $user=$userCollection->where($query)
        ->find();
+        print_r($user);
        // session::set("user",$user);
        if ($user) {
             // unset($user["password"]);

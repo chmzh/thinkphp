@@ -18,9 +18,9 @@ class Index
     }
     //http://thinkphp.cmz.com/index.php/index/index/mongo
     public function mongo(){
-        //Admin::login("chmzh", "1");
-        $model = new MongoModel;
-        $model->find();
+        Admin::login("chmzh", "1");
+        //$model = new MongoModel;
+        //$model->find();
         
         
         //$address = new Address;
