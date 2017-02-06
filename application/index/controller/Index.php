@@ -8,8 +8,8 @@ use think\cache\driver\Redis;
 use app\common\model\Admin;
 use app\common\model\Address;
 use app\common\model\MongoModel;
-use think\Controller;
-class Index extends Controller
+use think\BaseController;
+class Index extends BaseController
 {
     //http://thinkphp.cmz.com/index.php/index/index/hello
     public function help()
