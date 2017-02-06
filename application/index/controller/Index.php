@@ -53,7 +53,7 @@ class Index
 
         // 渲染模板输出 并赋值模板变量
         //return view('index',['name'=>'thinkphp']);
-        $view = view('index',[],['__PUBLIC__'=>'/public/']);
+        $view = view('index',[],['__PUBLIC1__'=>'/public/']);
         $view->assign("name",'thinkphp my');
         return $view;
     }

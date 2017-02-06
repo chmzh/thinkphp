@@ -1,1 +1,0 @@
-hello <?php echo $name;?> __PUBLIC__
