@@ -52,7 +52,10 @@ class Index
   
 
         // 渲染模板输出 并赋值模板变量
-        return view('index',['name'=>'thinkphp']);
+        //return view('index',['name'=>'thinkphp']);
+        $view = view('index',['name'=>'thinkphp']);
+        $view->assign("name",'thinkphp my');
+        return $view;
     }
     
     public function hello()
