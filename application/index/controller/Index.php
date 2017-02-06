@@ -8,7 +8,8 @@ use think\cache\driver\Redis;
 use app\common\model\Admin;
 use app\common\model\Address;
 use app\common\model\MongoModel;
-class Index
+use think\Controller;
+class Index extends Controller
 {
     //http://thinkphp.cmz.com/index.php/index/index/hello
     public function help()
@@ -53,9 +54,10 @@ class Index
 
         // 渲染模板输出 并赋值模板变量
         //return view('index',['name'=>'thinkphp']);
-        $view = view('index',[],['__PUBLIC1__'=>'/public/']);
-        $view->assign("name",'thinkphp my');
-        return $view;
+         $view = view('index',[],['__PUBLIC1__'=>'/public/']);
+         $view->assign("name",'thinkphp my');
+         return $view;
+//          return $this->fetch("index");
     }
     
     public function hello()
